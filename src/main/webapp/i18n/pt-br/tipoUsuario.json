@@ -1,0 +1,9 @@
+{
+  "bd2CursosV2App": {
+    "TipoUsuario": {
+      "null": "",
+      "ALUNO": "ALUNO",
+      "PROFESSOR": "PROFESSOR"
+    }
+  }
+}
