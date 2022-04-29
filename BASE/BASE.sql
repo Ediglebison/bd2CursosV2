@@ -36,7 +36,7 @@ CREATE TABLE `compra` (
   KEY `fk_compra__usuario_id` (`usuario_id`),
   CONSTRAINT `fk_compra__curso_id` FOREIGN KEY (`curso_id`) REFERENCES `curso` (`id`),
   CONSTRAINT `fk_compra__usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `compra` (
 
 LOCK TABLES `compra` WRITE;
 /*!40000 ALTER TABLE `compra` DISABLE KEYS */;
-INSERT INTO `compra` VALUES (1,NULL,80,'2022-04-28 03:00:00.000000','BOLETO','CRIADO',1,6),(2,NULL,100,'2022-04-28 03:00:00.000000','PIX','PAGO',2,11),(3,10,90,'2022-04-28 03:00:00.000000','CARTAO_DEBITO','PAGO',3,2),(4,5,95,'2022-04-28 03:00:00.000000','CARTAO_CREDITO','PAGO',2,1);
+INSERT INTO `compra` VALUES (1,NULL,80,'2022-04-28 03:00:00.000000','BOLETO','CRIADO',1,6),(2,NULL,100,'2022-04-28 03:00:00.000000','PIX','PAGO',2,11),(3,10,90,'2022-04-28 03:00:00.000000','CARTAO_DEBITO','PAGO',3,2),(4,5,95,'2022-04-28 03:00:00.000000','CARTAO_CREDITO','PAGO',2,1),(5,NULL,450,'2022-04-29 03:00:00.000000','BOLETO','PAGO',7,1),(6,NULL,450,'2022-04-29 03:00:00.000000','CARTAO_CREDITO','PAGO',7,2),(7,NULL,450,'2022-04-29 03:00:00.000000','BOLETO','AGUARDANDO_PAGAMENTO',7,5),(8,NULL,450,'2022-04-29 03:00:00.000000','CARTAO_DEBITO','CANCELADO',7,12),(9,NULL,80,'2022-04-29 03:00:00.000000','CARTAO_CREDITO','CANCELADO',1,14);
 /*!40000 ALTER TABLE `compra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +70,7 @@ CREATE TABLE `curso` (
   KEY `fk_curso__aluno_id` (`aluno_id`),
   CONSTRAINT `fk_curso__aluno_id` FOREIGN KEY (`aluno_id`) REFERENCES `usuario` (`id`),
   CONSTRAINT `fk_curso__professor_id` FOREIGN KEY (`professor_id`) REFERENCES `usuario` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +79,7 @@ CREATE TABLE `curso` (
 
 LOCK TABLES `curso` WRITE;
 /*!40000 ALTER TABLE `curso` DISABLE KEYS */;
-INSERT INTO `curso` VALUES (1,'Word Basico',80,'Uma descrição para Word Basico',150,'2022-04-28 04:09:00.000000',19,2),(2,'Phython Para Iniciantes',100,'Uma descrição para Phython Para Iniciantes',250,'2022-04-28 04:09:00.000000',18,5),(3,'PHP',100,'Uma descrição para PHP',250,'2022-04-28 04:09:00.000000',17,1);
+INSERT INTO `curso` VALUES (1,'Word Basico',80,'Uma descrição para Word Basico',150,'2022-04-28 04:09:00.000000',19,2),(2,'Phython Para Iniciantes',100,'Uma descrição para Phython Para Iniciantes',250,'2022-04-28 04:09:00.000000',18,5),(3,'PHP',100,'Uma descrição para PHP',250,'2022-04-28 04:09:00.000000',17,1),(7,'Redes de Computadores',700,'Uma descrição para Redes de Computadores',450,'2022-04-29 03:00:00.000000',18,7);
 /*!40000 ALTER TABLE `curso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `endereco` (
   PRIMARY KEY (`id`),
   KEY `fk_endereco__usuario_id` (`usuario_id`),
   CONSTRAINT `fk_endereco__usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `endereco` (
 
 LOCK TABLES `endereco` WRITE;
 /*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
-INSERT INTO `endereco` VALUES (1,'68745000','Rua 21 de Abril','B','125','Castanheiras','Terra Alta','Para','2022-04-28 03:51:00.000000',1),(2,'68745300','Rua 31 de Março','A','354','Barreiras','São Joao','Paraiba','2022-04-28 03:51:00.000000',2),(3,'58963245','Va 7 de Setembro','S','5698','Juriti','Codó','Maranhão','2022-04-28 03:51:00.000000',14),(4,'96587452','TV 12 de Outubro','l','456','Getulio Vargas','Curitiba','Parana','2022-04-28 03:51:00.000000',3),(5,'69854722','PS 15 de Novembro','1','369','Folha Verde','Manaus','Amazonas','2022-04-28 03:51:00.000000',5);
+INSERT INTO `endereco` VALUES (1,'68745000','Rua 21 de Abril','B','125','Castanheiras','Terra Alta','Para','2022-04-28 03:51:00.000000',1),(2,'68745300','Rua 31 de Março','A','354','Barreiras','São Joao','Paraiba','2022-04-28 03:51:00.000000',2),(3,'58963245','Va 7 de Setembro','S','5698','Juriti','Codó','Maranhão','2022-04-28 03:51:00.000000',14),(4,'96587452','TV 12 de Outubro','l','456','Getulio Vargas','Curitiba','Parana','2022-04-28 03:51:00.000000',3),(5,'69854722','PS 15 de Novembro','1','369','Folha Verde','Manaus','Amazonas','2022-04-28 03:51:00.000000',5),(11,'68742000','Rua Barão do Rio Branco','N/A','3212','Centro','Castanhal','Pará','2022-04-29 03:00:00.000000',9),(12,'68742000','Rua Comandante Francisco de Assis','B','123','Nova Olinda','Castanhal','Pará','2022-04-29 03:00:00.000000',4),(13,'68742000','Rua dos Universitarios','UFPA','1','Jaderlândia','Castanhal','Pará','2022-04-29 03:00:00.000000',6),(14,'66010-000','Rua Augusto Montenegro','N/A','98','Tenoné','Belém','Pará','2022-04-29 03:00:00.000000',7),(15,'66010-000','Rua Almirante Barroso','B','5642','Marco','Belém','Pará','2022-04-29 03:00:00.000000',8);
 /*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,14 +295,6 @@ LOCK TABLES `usuario` WRITE;
 INSERT INTO `usuario` VALUES (1,'YAsmim Rodrigues','21345678952','1985-02-03','ALUNO','2022-04-28 03:48:00.000000'),(2,'Aureni MARIA DA SILVA','54544874491','1988-06-19','ALUNO','2022-04-28 03:48:00.000000'),(3,'Bruno Cezar Da Silva','02436166439','2005-12-01','ALUNO','2022-04-28 03:48:00.000000'),(4,'Bruno Ricardo Marques Dutra','02314423437','2000-02-15','ALUNO','2022-04-28 03:48:00.000000'),(5,'Bruno Westmann Prado','07526066462','1982-03-05','ALUNO','2022-04-28 03:48:00.000000'),(6,'Camila Aparecida Da Silva Santos','02379285403','1979-08-13','ALUNO','2022-04-28 03:48:00.000000'),(7,'Camila Batista De Carvalho','03611363405','2003-10-10','ALUNO','2022-04-28 03:48:00.000000'),(8,'Camila Caetano Pereira','03406454402','1995-05-16','ALUNO','2022-04-28 03:48:00.000000'),(9,'Camila Calixto Moreira Dias','10712130403','1996-05-18','ALUNO','2022-04-28 03:48:00.000000'),(10,'Camila Reinaldo Bezerra','99388162404','1992-02-13','ALUNO','2022-04-28 03:48:00.000000'),(11,'Carina Kelly Da Costa Souza','06119597476','1984-02-16','ALUNO','2022-04-28 03:48:00.000000'),(12,'Carla Aparecida Da Silva Cavalheri','02791142495','1982-03-05','ALUNO','2022-04-28 03:48:00.000000'),(13,'Caroline Vieira Denani Diadema','06840062430','2007-06-16','ALUNO','2022-04-28 03:48:00.000000'),(14,'Cícera Da Silva Diadema','08024204436','1994-03-23','ALUNO','2022-04-28 03:48:00.000000'),(15,'Cíntia Pinheiro Macie','08692758442','1981-06-14','ALUNO','2022-04-28 03:48:00.000000'),(16,'Fernando Gabriel','52501982889','1981-06-14','PROFESSOR','2022-04-28 04:03:21.000000'),(17,'Aline Alves','52501982878','1987-09-30','PROFESSOR','2022-04-28 04:03:21.000000'),(18,'Ana Julia','14411159600','1978-04-15','PROFESSOR','2022-04-28 04:03:21.000000'),(19,'Manoel Ribeiro','49765843810','1985-04-21','PROFESSOR','2022-04-28 04:03:21.000000');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'bd2cursosv2'
---
-
---
--- Dumping routines for database 'bd2cursosv2'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -313,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-28  4:31:12
+-- Dump completed on 2022-04-29 17:17:24

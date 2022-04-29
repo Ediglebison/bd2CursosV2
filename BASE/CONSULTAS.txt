@@ -1,0 +1,23 @@
+<-- Seleciona dados da compra com nome do aluno, curso com valor, valor pago e id do professor 
+SELECT u.nome as Aluno, c.titulo, c.valor, co.valor_final as valor_pago, c.professor_id  FROM compra co
+INNER JOIN usuario u ON (co.usuario_id = u.id)
+INNER JOIN curso c ON (co.curso_id = c.id)
+
+ <-- Seleciona e conta os alunos  
+SELECT COUNT(id) FROM usuario WHERE tipo = 'ALUNO';
+
+<-- Seleciona e conta a quantidade de cadastros por cidade
+SELECT cidade, COUNT(cidade) from endereco
+GROUP BY cidade
+ORDER BY COUNT(cidade) DESC;
+
+<-- Seleciona o nome do usuario e endereço completo 
+SELECT u.nome, e.logradouro, e.numero, e.complemento, e.bairro, e.cidade, e.estado, e.cep from endereco e
+INNER JOIN usuario u ON (e.usuario_id = u.id)
+
+<-- Listar cursos do mais caro ao mais barato
+SELECT titulo, valor FROM curso
+ORDER BY valor DESC;
+
+<-- Soma o preço se for fazer todos o cursos
+SELECT SUM(valor) FROM curso;
